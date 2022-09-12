@@ -1,0 +1,40 @@
+stages:
+  - build
+  - test
+  - deploy
+
+build:
+  stage: build
+  image: python
+  script:
+    - pip install build
+    - python -m build
+  artifacts:
+    paths:
+      - dist/
+
+black:
+  stage: test
+  image: python
+  script:
+    - pip install black
+    - black --check .
+
+pytest:
+  stage: test
+  image: python
+  script:
+    - pip install pytest
+    - pytest tests/test_flask-river.py
+    
+deploy:
+  stage: deploy
+  image: python
+  variables:
+    TWINE_PASSWORD: $TWINE_TOKEN
+    TWINE_USERNAME: __token__
+  script:
+    - pip install twine
+    - python -m twine upload dist/* --verbose --skip-existing
+  only:
+    - master  
