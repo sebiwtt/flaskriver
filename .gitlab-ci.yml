@@ -38,6 +38,3 @@ deploy:
     - python -m twine upload dist/* --verbose --skip-existing
   only:
     - master  
-
-include:
-  - template: Code-Quality.gitlab-ci.yml
