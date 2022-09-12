@@ -27,8 +27,6 @@ pytest:
     - pip install pytest
     - pytest tests/test_flask-river.py
     
-
-
 deploy:
   stage: deploy
   image: python
@@ -43,6 +41,3 @@ deploy:
 
 include:
   - template: Code-Quality.gitlab-ci.yml
-code_quality:
-  tags:
-    - tct
