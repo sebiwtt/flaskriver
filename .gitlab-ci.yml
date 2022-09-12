@@ -37,4 +37,4 @@ deploy:
     - pip install twine
     - python -m twine upload dist/* --verbose --skip-existing
   only:
-    - master  
+    - main  
