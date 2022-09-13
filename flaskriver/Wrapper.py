@@ -8,6 +8,9 @@ class FlaskRiver:
         self.metrics = metrics
         self.predictions = predictions
 
+    def hello(self):
+        return "hello"
+
     def predict(self):
         payload = request.json
 
@@ -47,7 +50,7 @@ class FlaskRiver:
         self, app, prediction_route_url="predict", training_route_url="train"
     ):
         app.add_url_rule(
-            f"/{prediction_route_url}", "predict", self.predict, methods=["GET"]
+            f"/{prediction_route_url}", "predict", self.predict, methods=["POST"]
         )
         app.add_url_rule(
             f"/{training_route_url}", "train", self.train, methods=["POST"]
