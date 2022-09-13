@@ -1,3 +1,5 @@
-"""A package to easily use Flask together with River"""
+"""This is a package which aims to combine the lighweight web-framework flask
+with the online-ML library river in an easy way.
+"""
 
-__version__ = "0.0.1"
+__version__ = "0.0.2"

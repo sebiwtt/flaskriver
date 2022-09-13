@@ -25,7 +25,8 @@ pytest:
   image: python
   script:
     - pip install pytest
-    - pytest tests/test_flask-river.py
+    - pip install -r tests/requirements.txt
+    - pytest ./tests/
     
 deploy:
   stage: deploy

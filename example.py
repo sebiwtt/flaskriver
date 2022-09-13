@@ -1,13 +1,3 @@
-# Flask-River:
-This is a repository for an experimental project where I will try to combine the online ML capabilities of the library "River" with the lightweight web framework "Flask".
-
-Example usage:
-
-```sh
-pip install flaskriver
-```
-
-```python
 from flaskriver.Wrapper import FlaskRiver
 from flask import Flask
 from river import linear_model, metrics
@@ -25,6 +15,3 @@ flaskriver.registerToApp(app)
 
 if __name__ == "__main__":
     app.run(host="localhost", debug=True)
-
-```
-
