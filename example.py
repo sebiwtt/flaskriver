@@ -15,3 +15,5 @@ flaskriver.registerToApp(app)
 
 if __name__ == "__main__":
     app.run(host="localhost", debug=True)
+
+# This is a test
