@@ -23,10 +23,11 @@ black:
 pytest:
   stage: test
   image: python
-  script:
-    - pip install pytest
+  before_script:
+    - pip install dist/flaskriver-*.whl pytest
     - pip install -r tests/requirements.txt
-    - pytest ./tests/
+  script:
+    - pytest ./tests/test_flaskriver.py
     
 deploy:
   stage: deploy

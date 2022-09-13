@@ -12,4 +12,4 @@ dynamic = ["version", "description"]
 dependencies = ["flask"]
 
 [project.urls]
-Home = "https://deduce.de"
+Home = "https://github.com/sebiwtt/flaskriver"
