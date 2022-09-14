@@ -40,3 +40,17 @@ deploy:
     - python -m twine upload dist/* --verbose --skip-existing
   only:
     - main  
+
+deploy-docs:
+  stage: deploy
+  when: manual
+  image: williamyeh/ansible:alpine3
+  before_script:
+    - cd ~
+    - mkdir .ssh
+    - echo -n $UBERSPACE_PRIVATE_KEY > .ssh/private_key
+    - cd -
+  script:
+    - ssh -i ~/.ssh/private_key $UBER_USER@$UBER_HOSTNAME "rm -r ~/html/*" 
+    - scp -i ~/.ssh/private_key -r docs/* $UBER_USER@$UBER_HOSTNAME:~/html/ 
+
