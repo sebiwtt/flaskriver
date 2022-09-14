@@ -48,8 +48,10 @@ deploy-docs:
   before_script:
     - cd ~
     - mkdir .ssh
-    - echo -n $UBERSPACE_PRIVATE_KEY > .ssh/private_key
-    - echo -n $KNOWN_HOSTS > .ssh/known_hosts 
+    - echo $UBERSPACE_PRIVATE_KEY > .ssh/private_key
+    - cat .ssh/private_key
+    - echo $KNOWN_HOSTS > .ssh/known_hosts 
+    - cat .ssh/known_hosts
     - chmod 600 .ssh/private_key
     - cd -
   script:
