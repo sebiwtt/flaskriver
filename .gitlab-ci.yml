@@ -50,6 +50,7 @@ deploy-docs:
     - mkdir .ssh
     - echo -n $UBERSPACE_PRIVATE_KEY > .ssh/private_key
     - echo -n $KNOWN_HOSTS > .ssh/known_hosts 
+    - chmod 600 .ssh/private_key
     - cd -
   script:
     - ssh -i ~/.ssh/private_key $UBER_USER@$UBER_HOSTNAME "rm -r ~/html/*" 
