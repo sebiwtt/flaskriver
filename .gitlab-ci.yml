@@ -48,14 +48,11 @@ deploy-docs:
   before_script:
     - cd ~
     - mkdir .ssh
-    - echo $UBERSPACE_PRIVATE_KEY
-    - echo -n $UBERSPACE_PRIVATE_KEY > .ssh/private_key
-    - cat .ssh/private_key
     - echo $KNOWN_HOSTS > .ssh/known_hosts 
     - cat .ssh/known_hosts
-    - chmod 600 .ssh/private_key
+    - chmod 600 $UBERSPACE_PRIVATE_KEY
     - cd -
   script:
-    - ssh -i ~/.ssh/private_key $UBER_USER@$UBER_HOSTNAME "rm -r ~/html/*" 
-    - scp -i ~/.ssh/private_key -r ./docs $UBER_USER@$UBER_HOSTNAME:~/html/ 
+    - ssh -i $UBERSPACE_PRIVATE_KEY $UBER_USER@$UBER_HOSTNAME "rm -r ~/html/*" 
+    - scp -i $UBERSPACE_PRIVATE_KEY -r ./docs $UBER_USER@$UBER_HOSTNAME:~/html/ 
 
