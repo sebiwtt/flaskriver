@@ -49,11 +49,10 @@ deploy-docs:
     - cd ~
     - mkdir .ssh
     - echo $KNOWN_HOSTS > .ssh/known_hosts 
-    - cat .ssh/known_hosts
     - chmod 600 $UBERSPACE_PRIVATE_KEY
     - cd -
   script:
     - cat $UBERSPACE_PRIVATE_KEY
     - ssh -i $UBERSPACE_PRIVATE_KEY $UBER_USER@$UBER_HOSTNAME "rm -r ~/html/*" 
-    - scp -i $UBERSPACE_PRIVATE_KEY -r ./docs $UBER_USER@$UBER_HOSTNAME:~/html/ 
+    - scp -i $UBERSPACE_PRIVATE_KEY -r ./docs/ $UBER_USER@$UBER_HOSTNAME:~/html/ 
 
