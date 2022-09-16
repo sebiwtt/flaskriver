@@ -55,6 +55,7 @@ deploy-docs:
     - apk update && apk add python3 py3-pip python3-dev
     - pip install --upgrade pip 
     - pip install mkdocs
+    - pip install mkdocs-material mkdocs-awesome-pages-plugin
     - mkdocs build
     - ssh -i $UBERSPACE_PRIVATE_KEY $UBER_USER@$UBER_HOSTNAME "rm -r ~/html/*" 
     - scp -i $UBERSPACE_PRIVATE_KEY -r ./site/* $UBER_USER@$UBER_HOSTNAME:~/html/ 
