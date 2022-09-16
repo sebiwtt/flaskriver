@@ -52,6 +52,8 @@ deploy-docs:
     - chmod 600 $UBERSPACE_PRIVATE_KEY
     - cd -
   script:
+    - pip install mkdocs mkdocs-material
+    - mkdocs build
     - ssh -i $UBERSPACE_PRIVATE_KEY $UBER_USER@$UBER_HOSTNAME "rm -r ~/html/*" 
-    - scp -i $UBERSPACE_PRIVATE_KEY -r ./docs/* $UBER_USER@$UBER_HOSTNAME:~/html/ 
+    - scp -i $UBERSPACE_PRIVATE_KEY -r ./site/* $UBER_USER@$UBER_HOSTNAME:~/html/ 
 
