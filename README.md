@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-    This is a repository for the open-source project Flaskriver. It combines the lightweight web-framework Flask with the online-ML library <a href="https://github.com/online-ml/river">River</a>. For more info on online-ML check out the river repository or the official website.
+    This is a repository for the open-source project Flaskriver. It combines the lightweight web-framework Flask with the online-ML library <a href="https://github.com/online-ml/river">River</a> to make deploying online-ML models to web web easier. For more info on online-ML check out the river repository or the official website.
 </p>
 
 ## Introduction
