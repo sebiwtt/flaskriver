@@ -1,7 +1,5 @@
-# Flask-River:
-
 <p align="center">
-    <img height="220px" src="docs/img/text.png" alt="logo">
+    <img src="docs/img/text.png" alt="logo">
 </p>
 
 <p align="center">
