@@ -27,7 +27,7 @@ pytest:
     - pip install dist/flaskriver-*.whl pytest
     - pip install -r tests/requirements.txt
   script:
-    - pytest ./tests/test_flaskriver.py
+    - pytest ./tests
     
 deploy:
   stage: deploy
