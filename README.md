@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-    This is a repository for the open-source project flaskriver. Flaskriver combines the lightweight web-framework "flask" with the online-ML library <a href="https://github.com/online-ml/river">"river"</a>. For more info on online-ML check out the river repository or the official website.
+    This is a repository for the open-source project Flaskriver. It combines the lightweight web-framework Flask with the online-ML library <a href="https://github.com/online-ml/river">River</a>. For more info on online-ML check out the river repository or the official website.
 </p>
 
 ## Introduction
@@ -39,19 +39,19 @@ if __name__ == "__main__":
     app.run(host="localhost", debug=True)
 ```
 
-At these endpoints the app will wait for training data in the json format (since river models work with dictionaries). A JSON body for training the model could look something like this:
+At these endpoints the app will await the training data as JSON (since river models work with dictionaries). A JSON body for training the model could look something like this:
 
 ```json
 {
     "features":{
-        "x1":1238,
-        "x2":891
+        "x1":300,
+        "x2":210
     },
     "target":false
 }
 ```
 
-And the JSON body for predicting a value would then just look like this:
+And the JSON body for predicting a value would then look like this:
 
 ```json
 {
@@ -60,7 +60,7 @@ And the JSON body for predicting a value would then just look like this:
 }
 ```
 
-With the following code you can set up small client which goes through an entire dataset (the "Phising" dataset which comes with river) and incrementally trains the model and evaluates it's metrics.
+With the following code you can set up a small client which goes through an entire dataset (the "Phising" dataset which comes with River) and incrementally trains the model and evaluates it's metrics.
 
 ```python
 import requests
@@ -81,7 +81,7 @@ for x, y in dataset:
 ```
 
 ## Documentation
-You can find more detailed documentation for flaskriver at <a href="https://flaskriver.ml">flaskriver.ml</a>.
+You can find more detailed documentation for Flaskriver at <a href="https://flaskriver.ml">flaskriver.ml</a>
 
 ## Contributing
-If you would like to contribute something to the project fell free to share your ideas in form of an issue. You can also reach out to me directly via e-mail or you add me on LinkedIn.
+If you would like to contribute something to the project fell free to share your ideas in form of an issue. You can also reach out to me directly via e-mail.
