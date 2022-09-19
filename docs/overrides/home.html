@@ -1,14 +1,6 @@
 <!-- Custom HTML site displayed as the landing page -->
 {% extends "base.html" %}
 
-{% block outdated %}
-  You're not viewing the latest version.
-  <a href="{{ '../' ~ base_url }}">
-    <strong>Click here to go to latest.</strong>
-  </a>
-{% endblock %}
-
-
 <!-- Render hero under tabs -->
 {% block tabs %}
     {{ super() }}
@@ -64,6 +56,19 @@
             padding: 0;
         }
         
+        @media only screen and (max-width: 600px) {
+            .heading-h1{ 
+                font-size: 2.5rem;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            .heading-h2{ 
+                font-size: 0.8rem;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }       
 
     </style>
     <section class="main-container">
