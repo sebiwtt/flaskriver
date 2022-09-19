@@ -1,0 +1,93 @@
+<!-- Custom HTML site displayed as the landing page -->
+{% extends "base.html" %}
+
+<!-- Render hero under tabs -->
+{% block tabs %}
+    {{ super() }}
+
+   <link href="https://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet">
+
+    <!-- Additional styles for landing page -->
+    <style>
+
+        html{
+            overflow: hidden;
+        }
+
+        /*Landing page container*/
+        .main-container {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            padding-top: .0rem;
+            background-color: #9AD953;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23a0e156' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%23a5e859' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%23abf05c' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%23b0f75f' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%23B6FF62' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
+            background-attachment: fixed;
+            background-size: cover;
+            height: 100vh; 
+        }
+
+        .heading{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: auto;
+            margin-bottom: 55vh;
+        }
+
+
+
+        .heading-h1{ 
+            color: white;
+            font-size: 3rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .heading-h2{ 
+            color: white;
+            font-size: 1rem;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        
+        @media only screen and (max-width: 600px) {
+            .heading-h1{ 
+                font-size: 2.5rem;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            .heading-h2{ 
+                font-size: 0.8rem;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }       
+
+    </style>
+    <section class="main-container">
+        <div class="heading">
+            <h1 class="heading-h1">
+                Flaskriver
+            </h1>
+            <h2 class="heading-h2">
+                A quick and easy way to deploy online-ML to the web
+            </h2>
+        </div>
+        
+      
+    </section>
+
+{% endblock %}
+
+<!-- Content -->
+{% block content %}{% endblock %}
+
+<!-- Application footer -->
+{% block footer %}{% endblock %}

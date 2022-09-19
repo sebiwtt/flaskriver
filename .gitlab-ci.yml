@@ -27,7 +27,7 @@ pytest:
     - pip install dist/flaskriver-*.whl pytest
     - pip install -r tests/requirements.txt
   script:
-    - pytest ./tests/test_flaskriver.py
+    - pytest ./tests
     
 deploy:
   stage: deploy
@@ -40,3 +40,23 @@ deploy:
     - python -m twine upload dist/* --verbose --skip-existing
   only:
     - main  
+
+deploy-docs:
+  stage: deploy
+  when: manual
+  image: williamyeh/ansible:alpine3
+  before_script:
+    - cd ~
+    - mkdir .ssh
+    - echo $KNOWN_HOSTS > .ssh/known_hosts 
+    - chmod 600 $UBERSPACE_PRIVATE_KEY
+    - cd -
+  script:
+    - apk update && apk add python3 py3-pip python3-dev
+    - pip3 install --upgrade pip 
+    - pip3 install mkdocs
+    - pip3 install mkdocs-material mkdocs-awesome-pages-plugin
+    - mkdocs build
+    - ssh -i $UBERSPACE_PRIVATE_KEY $UBER_USER@$UBER_HOSTNAME "rm -r ~/html/*" 
+    - scp -i $UBERSPACE_PRIVATE_KEY -r ./site/* $UBER_USER@$UBER_HOSTNAME:~/html/ 
+
