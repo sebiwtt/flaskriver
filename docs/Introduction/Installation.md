@@ -1,6 +1,6 @@
 # Installation
 
-To use Flaskriver it is reccomended to use Python 3.8 or higher. You can easily install the package using pip:
+To use Flaskriver it is reccomended to use Python 3.8 or higher. You can easily install the package using `pip`:
 
 ```sh
 pip3 install flaskriver

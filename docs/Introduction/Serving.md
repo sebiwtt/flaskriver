@@ -41,7 +41,7 @@ With the developement server running, your Flask app will now serve three endpoi
 These endpoints can be reached via an HTTP request. For sending such a request you can either use a GUI-based client like [Postman](https://www.postman.com/) or directly send requests from within python code.
 
 ### Training
-River models expect the training data in form of a dictionary. This is convenient since the JSON payload of a HTTP request is modeld as a dictionary in python. So when you want to train the model on one data point you will have to send a POST request to the /train endpoint with a JSON payload that looks something like this:
+River models expect the training data in form of a dictionary. This is convenient since the JSON payload of a HTTP request is modeld as a dictionary in python. So when you want to train the model on one data point you will have to send a `POST` request to the /train endpoint with a JSON payload that looks something like this:
 
 ```json
 {
@@ -56,7 +56,7 @@ River models expect the training data in form of a dictionary. This is convenien
 The important thing to note is that the keys need to be "features" and "target". The target will obviously be a single value (either a class or a number based on the task you are working on) and the features can consist of many values (based on the data you are working with). When the request is send you will receive a response which will not contain a payload. It will just be a 201 response.
 
 ### Predicting
-When predicting values with the model you will also have to send a POST request. But this time you send it to the /predict endpoint and it will also contain a slightly different payload:
+When predicting values with the model you will also have to send a `POST` request. But this time you send it to the /predict endpoint and it will also contain a slightly different payload:
 
 ```json
 {
@@ -74,7 +74,7 @@ This time you will just send all the features with no key defined. The model wil
 ```
 
 ### Metrics
-For a query of the metrics specified earlier, there is the /metric endpoint. For this one you will have to send a GET request and provide no payload. Based on the metrics you specified the response payload may look something like this:
+For a query of the metrics specified earlier, there is the /metric endpoint. For this one you will have to send a `GET` request and provide no payload. Based on the metrics you specified the response payload may look something like this:
 
 ```json
 {
