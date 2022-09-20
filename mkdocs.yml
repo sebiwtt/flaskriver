@@ -1,5 +1,5 @@
 site_name: Flaskriver
-site_description: Machine learning for data streams in Python
+site_description:  Combining the lightweight web-framework Flask with the online-ML library River to make deploying online-ML models to the web easier and quicker.
 site_author: Sebastian Wette
 site_url: https://flaskriver.ml
 copyright: Copyright &copy; 2022
