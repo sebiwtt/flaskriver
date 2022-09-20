@@ -7,9 +7,6 @@ class Interface:
         self.model = model
         self.metrics = metrics
 
-    def hello(self):
-        return "hello"
-
     def predict(self):
         pass
 
