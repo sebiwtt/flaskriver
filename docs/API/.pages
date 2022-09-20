@@ -1,3 +1,5 @@
 title: API
 nav:
-  - FlaskRiver.md
+  - RegressionInterface.md
+  - ClassificationInterface.md
+  
