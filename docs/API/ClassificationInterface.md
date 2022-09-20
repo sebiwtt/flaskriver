@@ -13,7 +13,7 @@ The `ClassificationInterface` is the Interface to use for classification models.
 
 - **predictions** - defaults to `"class"`
 
-    A string defining how to predict values. For classification tasks a model can either predict the class or the probabilities for all the possible classes. 
+    A string defining how to predict values. For classification tasks, a model can either predict the class or the probabilities for all the possible classes. 
     
     Options: `"class"`, `"proba"` 
 
@@ -28,7 +28,7 @@ This endpoint is used for training the model.
 
 **Request Payload**
 
-- A JSON Object containig a list of features with the key "features", and a single target value with the key "target".
+- A JSON Object containing a list of features with the key "features", and a single target value with the key "target".
 ```json
 {
     "features":{
@@ -50,7 +50,7 @@ This endpoint is used for predicting a value.
 
 **Request Payload**
 
-- A JSON Object containig a list of features with no key specified.
+- A JSON Object containing a list of features with no key specified.
 ```json
 {
     "x1":300,
@@ -91,7 +91,7 @@ This endpoint is used for monitoring the metrics of the model.
 
 ### predict()
 
-The `predict()` method will be linked to the /predict endpoint. It does not receive any parameters, but gets its inputs in form of the JSON payload from the request. The model will then predict a value which will be returned in the response. Since the model will perform a classification task it will either return one value in form of the predicted class or it will return the probabilites for all the possible classes. You can specify this when instantiating the model by passing the `predictions` parameter.
+The `predict()` method will be linked to the /predict endpoint. It does not receive any parameters but gets its inputs in form of the JSON payload from the request. The model will then predict a value which will be returned in the response. Since the model will perform a classification task it will either return one value in form of the predicted class or it will return the probabilities for all the possible classes. You can specify this when instantiating the model by passing the `predictions` parameter.
 
 **Method parameters**
 

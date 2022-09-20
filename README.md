@@ -93,7 +93,7 @@ You can find more detailed documentation for Flaskriver at <a href="https://flas
 The Package source and build is available on <a href="https://pypi.org/project/flaskriver/">PyPI</a> so that it can be insalled via pip.
 
 ### Repository
-If you're wondering why there is a .gitlab-ci.yml file in the repository, don't worry. I did not mix up GitLab-CI and Github Actions ;) Since I am far more familiar with GitLab-CI I decided to create a repository there for running the automated CI-Pipeline. But with each push/merge to the main branch, all the code will be uploaded to this public Github repo as well. There is no extra code in the GitLab repository.
+If you're wondering why there is a .gitlab-ci.yml file in the repository, don't worry. I did not mix up GitLab-CI and GitHub Actions ;) Since I am far more familiar with GitLab-CI I decided to create a repository there for running the automated CI-Pipeline. But with each push/merge to the main branch, all the code will be uploaded to this public GitHub repo as well. There is no extra code in the GitLab repository.
 
 ## Contributing
 If you would like to contribute something to the project feel free to share your ideas in form of an issue. You can also reach out to me directly via e-mail.

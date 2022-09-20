@@ -27,9 +27,9 @@ if __name__ == "__main__":
 
 After importing all the necessary packages you first have to specify your model along with the metrics you would like to track. For more information on this please look at the [River documentation](https://riverml.xyz).
 
-You can now instantiate a new interface with your model and a list of the metrics to be used. In our case this instance is a ClassificationInterface.
+You can now instantiate a new interface with your model and a list of the metrics to be used. In our case, this instance is a ClassificationInterface.
 
-All there is left to do now is to create a Flask app (more information on that can be found on the [Flask website](https://flask.palletsprojects.com/)) and register your Interface to the app object. You can now run the app to spin up the [Werkzeug](https://werkzeug.palletsprojects.com/en/2.2.x/) development server.
+All there is left to do now is to create a Flask app (more information on that can be found on the [Flask website](https://flask.palletsprojects.com/) and register your Interface to the app object. You can now run the app to spin up the [Werkzeug](https://werkzeug.palletsprojects.com/en/2.2.x/) development server.
 
 ## Sending requests
 With the development server running, your Flask app will now serve three endpoints regarding the model.
@@ -41,7 +41,7 @@ With the development server running, your Flask app will now serve three endpoin
 These endpoints can be reached via an HTTP request. For sending such a request you can either use a GUI-based client like [Postman](https://www.postman.com/) or directly send requests from within python code.
 
 ### Training
-River models expect the training data in form of a dictionary. This is convenient since the JSON payload of a HTTP request is modeld as a dictionary in python. So when you want to train the model on one data point you will have to send a `POST` request to the /train endpoint with a JSON payload that looks something like this:
+River models expect the training data in form of a dictionary. This is convenient since the JSON payload of an HTTP request is modelled as a dictionary in python. So when you want to train the model on one data point you will have to send a `POST` request to the /train endpoint with a JSON payload that looks something like this:
 
 ```json
 {
@@ -53,7 +53,7 @@ River models expect the training data in form of a dictionary. This is convenien
 }
 ```
 
-The important thing to note is that the keys need to be "features" and "target". The target will obviously be a single value (either a class or a number based on the task you are working on) and the features can consist of many values (based on the data you are working with). When the request is send you will receive a response which will not contain a payload. It will just be a 201 response.
+The important thing to note is that the keys need to be "features" and "target". The target will be a single value (either a class or a number based on the task you are working on) and the features can consist of many values (based on the data you are working with). When the request is sent you will receive a response which will not contain a payload. It will just be a 201 response.
 
 ### Predicting
 When predicting values with the model you will also have to send a `POST` request. But this time you send it to the /predict endpoint and it will also contain a slightly different payload:
@@ -74,7 +74,7 @@ This time you will just send all the features with no key defined. The model wil
 ```
 
 ### Metrics
-For a query of the metrics specified earlier, there is the /metric endpoint. For this one you will have to send a `GET` request and provide no payload. Based on the metrics you specified the response payload may look something like this:
+For a query of the metrics specified earlier, there is the /metric endpoint. For this one, you will have to send a `GET` request and provide no payload. Based on the metrics you specified the response payload may look something like this:
 
 ```json
 {
@@ -83,7 +83,7 @@ For a query of the metrics specified earlier, there is the /metric endpoint. For
 }
 ```
 
-Note that these values represent the metrics at this specific point in time. After training on another data point these values will be differen. This enables you to keep track of the metrics live.
+Note that these values represent the metrics at this specific point in time. After training on another data point these values will be different. This enables you to keep track of the metrics in live time.
 
 ## Client example
 If you have a dataset ready for training, or got live data coming in you can build a small client for your hosted model pretty easily. The following code is a barebone example using one of the datasets which ship with river:
@@ -105,8 +105,8 @@ for x, y in dataset:
     print(response.json())
 ```
 
-If you run the code the client will iterate through the dataset and send the features along with the target to the /train endpoint. With every iteration it will also retrieve the current values for all the specified metrics and print them on the screen.
+If you run the code the client will iterate through the dataset and send the features along with the target to the /train endpoint. With every iteration, it will also retrieve the current values for all the specified metrics and print them on the screen.
 
 ## Serving in production
 
-Note that the previously shown way of serving the model is fine for development purposes but not for production. For this you should not use the Werkzeug development server. You should instead use a production ready server. The most common stack for hosting Flask application is uwsgi combined with nginx. You can read more about the process of spinning up a production server [here](https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uswgi-and-nginx-on-ubuntu-18-04) for example since this is out of scope for this project.
+Note that the previously shown way of serving the model is fine for development purposes but not for production. For this, you should not use the Werkzeug development server. You should instead use a production-ready server. The most common stack for hosting Flask applications is uwsgi combined with nginx. You can read more about the process of spinning up a production server [here](https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uswgi-and-nginx-on-ubuntu-18-04) for example since this is out of scope for this project.

@@ -23,7 +23,7 @@ This endpoint is used for training the model.
 
 **Request Payload**
 
-- A JSON Object containig a list of features with the key "features", and a single target value with the key "target".
+- A JSON Object containing a list of features with the key "features", and a single target value with the key "target".
 ```json
 {
     "features":{
@@ -45,7 +45,7 @@ This endpoint is used for predicting a value.
 
 **Request Payload**
 
-- A JSON Object containig a list of features with no key specified.
+- A JSON Object containing a list of features with no key specified.
 ```json
 {
     "x1":300,
@@ -85,7 +85,7 @@ This endpoint is used for monitoring the metrics of the model.
 
 ### predict()
 
-The `predict()` method will be linked to the /predict endpoint. It does not receive any parameters, but gets its inputs in form of the JSON payload from the request. The model will then predict a value which will be returned in the response. Since the model will perform a regression task, the prediction will return a numeric value.
+The `predict()` method will be linked to the /predict endpoint. It does not receive any parameters but gets its inputs in form of the JSON payload from the request. The model will then predict a value which will be returned in the response. Since the model will perform a regression task, the prediction will return a numeric value.
 
 **Method parameters**
 

@@ -1,9 +1,9 @@
 # Interface
-The `Interface` class is the superclass for the differnt kinds of use case specific interfaces. The `Interface` class itself will not be used by a casual user of this package. 
+The `Interface` class is the superclass for the different kinds of use case-specific interfaces. The `Interface` class itself will not be used by a casual user of this package. 
 
 Classes like [`RegressionInterface`](RegressionInterface.md) will inherit the core functionality from it. `Interface` implements the methods `train()`, `metric()`, `registerToApp()` as well as the `super().__init__()` for the subclasses. If the features of a subclass differ from the superclass implementation the subclass will just overload them. 
 
-The `predict()` method is not implemented in the superclass since this differs in all the use case specific Interfaces which are implemented for now. This is why it is not specified here.
+The `predict()` method is not implemented in the superclass since this differs in all the use case-specific Interfaces which are implemented for now. This is why it is not specified here.
 
 ## Parameters
 
@@ -20,7 +20,7 @@ The following methods described here are the ones used at the different endpoint
 
 ### train()
 
-The `train()` method will be linked to the /train endpoint. It does not receive any parameters, but gets its inputs in form of the JSON payload from the request. The method will then update all the metrics by comparing a predicted value with the actual value and then learn the given example. 
+The `train()` method will be linked to the /train endpoint. It does not receive any parameters but gets its inputs in form of the JSON payload from the request. The method will update all the metrics by comparing a predicted value with the actual value and then learn the given example. 
 
 **Method parameters**
 
@@ -32,7 +32,7 @@ The `train()` method will be linked to the /train endpoint. It does not receive 
 
 ### metric()
 
-The `metric()` method will be linked to the /metric endpoint. It does not receive any parameters, and no JSON payload from the request. It will iterate over all specified metrics and return them with the response. 
+The `metric()` method will be linked to the /metric endpoint. It does not receive any parameters and no JSON payload from the request. It will iterate over all specified metrics and return them with the response. 
 
 **Method parameters**
 
@@ -43,7 +43,7 @@ The `metric()` method will be linked to the /metric endpoint. It does not receiv
 - Nothing
 
 ---
-The following method is not linked to any endpoint but instead it is used to link the methods mentioned above to the corresponding endpoints.
+The following method is not linked to any endpoint instead it is used to link the methods mentioned above to the corresponding endpoints.
 
 ### registerToApp()
 
