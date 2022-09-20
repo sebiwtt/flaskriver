@@ -1,6 +1,6 @@
 # Quickstart
 
-When the package is installed on your system you can quickly deploy your first models to a developement server.
+When the package is installed on your system you can quickly deploy your first models to a development server.
 
 ## Serving models locally
 Let's look at the code below:
@@ -29,10 +29,10 @@ After importing all the necessary packages you first have to specify your model 
 
 You can now instantiate a new interface with your model and a list of the metrics to be used. In our case this instance is a ClassificationInterface.
 
-All there is left to do now is to create a Flask app (more information on that can be found on the [Flask website](https://flask.palletsprojects.com/)) and register your Interface to the app object. You can now run the app to spin up the [Werkzeug](https://werkzeug.palletsprojects.com/en/2.2.x/) developement server.
+All there is left to do now is to create a Flask app (more information on that can be found on the [Flask website](https://flask.palletsprojects.com/)) and register your Interface to the app object. You can now run the app to spin up the [Werkzeug](https://werkzeug.palletsprojects.com/en/2.2.x/) development server.
 
 ## Sending requests
-With the developement server running, your Flask app will now serve three endpoints regarding the model.
+With the development server running, your Flask app will now serve three endpoints regarding the model.
 
 - /train
 - /predict
@@ -106,3 +106,7 @@ for x, y in dataset:
 ```
 
 If you run the code the client will iterate through the dataset and send the features along with the target to the /train endpoint. With every iteration it will also retrieve the current values for all the specified metrics and print them on the screen.
+
+## Serving in production
+
+Note that the previously shown way of serving the model is fine for development purposes but not for production. For this you should not use the Werkzeug development server. You should instead use a production ready server. The most common stack for hosting Flask application is uwsgi combined with nginx. You can read more about the process of spinning up a production server [here](https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uswgi-and-nginx-on-ubuntu-18-04) for example since this is out of scope for this project.

@@ -1,5 +1,6 @@
 title: API
 nav:
-  - RegressionInterface.md
-  - ClassificationInterface.md
+    - Interface.md
+    - RegressionInterface.md
+    - ClassificationInterface.md
   
